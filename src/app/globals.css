@@ -1,78 +1,72 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-:root {
-  --background: #030303;
-  --foreground: #ffffff;
-  
-  /* Gen-Z Vibe Colors */
-  --neon-green: #ccff00;
-  --neon-purple: #bd00ff;
-  --neon-blue: #00f0ff;
-  --neon-pink: #ff0099;
-  
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-}
-
 @theme {
-  --font-sans: var(--font-outfit);
+  /* Fonts */
+  --font-family-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Custom Colors */
+  --color-neon-green: #ccff00;
+  --color-neon-purple: #bd00ff;
+  --color-neon-blue: #00f0ff;
+  --color-neon-pink: #ff0099;
   
-  --color-neon-green: var(--neon-green);
-  --color-neon-purple: var(--neon-purple);
-  --color-neon-blue: var(--neon-blue);
-  --color-neon-pink: var(--neon-pink);
-  
+  /* Animations */
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-tilt: tilt 10s infinite linear;
+}
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
-  
-  @keyframes pulse-glow {
-    0%, 100% { opacity: 1; box-shadow: 0 0 20px var(--neon-purple); }
-    50% { opacity: .5; box-shadow: 0 0 10px var(--neon-blue); }
-  }
-  
-  @keyframes tilt {
-    0%, 50%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(1deg); }
-    75% { transform: rotate(-1deg); }
-  }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 20px #bd00ff; }
+  50% { opacity: .5; box-shadow: 0 0 10px #00f0ff; }
+}
+
+@keyframes tilt {
+  0%, 50%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
+}
+
+:root {
+  --background: #030303;
+  --foreground: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* Custom Utilities for Glassmorphism */
-@utility glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-}
+/* Custom Utilities */
+@layer utilities {
+  .glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
 
-@utility text-gradient {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, var(--neon-green), var(--neon-blue));
-}
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #ccff00, #00f0ff);
+  }
 
-@utility text-gradient-purple {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, var(--neon-purple), var(--neon-pink));
+  .text-gradient-purple {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #bd00ff, #ff0099);
+  }
 }

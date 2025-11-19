@@ -9,6 +9,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://brandmonitor.ai'),
   title: {
     default: "Brand Monitor AI | Gen-Z Insights & Reputation Tracking",
     template: "%s | Brand Monitor AI"
