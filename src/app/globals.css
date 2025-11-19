@@ -1,17 +1,15 @@
 @import "tailwindcss";
+
 @plugin "daisyui";
 
 @theme {
-  /* Fonts */
-  --font-family-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
-  
   /* Custom Colors */
   --color-neon-green: #ccff00;
   --color-neon-purple: #bd00ff;
   --color-neon-blue: #00f0ff;
   --color-neon-pink: #ff0099;
   
-  /* Animations */
+  /* Custom Animations */
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-tilt: tilt 10s infinite linear;
@@ -24,7 +22,7 @@
 
 @keyframes pulse-glow {
   0%, 100% { opacity: 1; box-shadow: 0 0 20px #bd00ff; }
-  50% { opacity: .5; box-shadow: 0 0 10px #00f0ff; }
+  50% { opacity: 0.5; box-shadow: 0 0 10px #00f0ff; }
 }
 
 @keyframes tilt {
