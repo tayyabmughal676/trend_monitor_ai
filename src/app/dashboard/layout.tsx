@@ -93,7 +93,7 @@ export default function DashboardLayout({
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 md:ml-64 min-h-screen pt-16 md:pt-0">
+      <main className="flex-1 md:ml-64 min-h-screen pt-16 md:pt-0 p-4 md:p-8 lg:p-12">
         {children}
       </main>
 

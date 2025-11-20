@@ -9,6 +9,11 @@
   --color-neon-blue: #00f0ff;
   --color-neon-pink: #ff0099;
   
+  /* Spacing Scale - Ensure padding utilities work on Vercel */
+  --spacing-4: 1rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  
   /* Custom Animations */
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
